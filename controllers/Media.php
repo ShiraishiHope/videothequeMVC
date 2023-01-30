@@ -4,7 +4,7 @@ class Media extends Controller
     public function index()
     {
         $this->loadModel("Anime");
-        $media = $this->Anime->getAll();
+        $media = $this->Anime->getAll("series");
 
         $this->render('index', compact('media'));
      
