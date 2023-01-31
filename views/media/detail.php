@@ -17,7 +17,7 @@
         <?= $anime['synopsis'] ?>
     </p>
     <p>
-        <?= $anime['type'] ?>
+        Type: <?= $anime['type'] ?>
     </p>
     <p>
         <?= $anime['releaseDate'] ?>
