@@ -16,6 +16,15 @@ class ProductionModel extends Model
     }
 
     /**
+     * Récupère uniquement les studios de productions sans doublons
+     * @return array
+     */
+    public function findUnique() {
+        $query = $this->queryFunc('SELECT name, establishmentDate FROM '.$this->table.' GROUP BY name, establishmentDate');
+        return $query->fetchAll();
+    }
+
+    /**
      * @return mixed
      */
     public function getId()
