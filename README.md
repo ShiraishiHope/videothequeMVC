@@ -1,0 +1,1 @@
+Il faut configurer laragon dans le dossier public.

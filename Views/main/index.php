@@ -11,6 +11,7 @@
                 <h3>
 
                     <a href="/anime/detail/<?= $series[$i]->id ?>">
+                        <img src="<?= $series[$i]->image ?>" alt="Image">
                         <?= $series[$i]->name ?>
                     </a>
                 </h3>
@@ -21,6 +22,7 @@
             <div class="movie card" style="grid-row: <?php echo $i+2; ?> / <?php echo $i+3; ?>;">
                 <h3>
                     <a href="/anime/detail/<?= $movies[$i]->id ?>">
+                        <img src="<?= $movies[$i]->image ?>" alt="Image">
                         <?= $movies[$i]->name ?>
                     </a>
                 </h3>
@@ -31,6 +33,7 @@
             <div class="studio card" style="grid-row: <?php echo $i+2; ?> / <?php echo $i+3; ?>;">
                 <h3>
                     <a href="/production/detail/<?= $studios[$i]->id ?>">
+                        <img src="<?= $studios[$i]->image ?>" alt="Image">
                         <?= $studios[$i]->name ?>
                     </a>
                 </h3>
@@ -40,9 +43,10 @@
             </div>
         <?php } ?>
 
-        <a class="series seeMore" href="/series/list" style="grid-row: 5 / 6;">See More</a>
-        <a class="movie seeMore" href="/movie/list" style="grid-row: 5 / 6;">See More</a>
-        <a class="studio seeMore" href="/production/list" style="grid-row: 5 / 6;">See More</a>
+    <a class="series seeMore" href="/series/list" style="grid-row: 5 / 6;">See More</a>
+    <a class="movie seeMore" href="/movie/list" style="grid-row: 5 / 6;">See More</a>
+    <a class="studio seeMore" href="/production/list" style="grid-row: 5 / 6;">See More</a>
+
 
     </div>
 

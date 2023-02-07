@@ -17,7 +17,7 @@ class MainController extends Controller
 
         //On va chercher les studios de production
         $productionModel = new ProductionModel;
-        $studios = $productionModel->findAll();
+        $studios = $productionModel->findRandomUnique();
 
         //On génère la vue
         $this->render('main/index', compact('series', 'movies', 'studios'));
