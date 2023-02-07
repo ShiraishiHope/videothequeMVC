@@ -23,7 +23,7 @@ class MovieController extends Controller
             $movieModel = new AnimeModel;
 
             //on cherche un anime
-            $movie = $movieModel->findByRandom(['type' => 'Movie']);
+            $movie = $movieModel->findBy(['type' => 'Movie']);
 
             //On envoie à la vue
             $this->render('movie/list', compact('movie'));

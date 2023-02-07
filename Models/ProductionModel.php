@@ -20,10 +20,14 @@ class ProductionModel extends Model
      * @return array
      */
     public function findUnique() {
-        $query = $this->queryFunc('SELECT name, establishmentDate FROM '.$this->table.' GROUP BY name, establishmentDate');
+        $query = $this->queryFunc("SELECT name, establishmentDate, image FROM ".$this->table." WHERE image IS NOT NULL GROUP BY name, establishmentDate, image");
         return $query->fetchAll();
     }
 
+    public function findRandomUnique() {
+        $query = $this->queryFunc("SELECT name, establishmentDate, image FROM ".$this->table." WHERE image IS NOT NULL GROUP BY name, establishmentDate, image ORDER BY RAND() LIMIT 3");
+        return $query->fetchAll();
+    }
     /**
      * @return mixed
      */

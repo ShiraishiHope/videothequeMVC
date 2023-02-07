@@ -23,8 +23,8 @@ class SeriesController extends Controller
             $seriesModel = new AnimeModel;
 
             //on cherche un anime
-            $series = $seriesModel->findByRandom(['type' => 'Series']);
-var_dump($series);
+            $series = $seriesModel->findBy(['type' => 'Series']);
+
             //On envoie à la vue
             $this->render('series/list', compact('series'));
 
