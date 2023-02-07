@@ -2,7 +2,7 @@
     <div>
         <h2>
             <div class="series card">
-            <a href="/anime/detail/<?= $series[$i]->id ?>">
+            <a href="/series/detail/<?= $series[$i]->id ?>">
                 <img src="<?= $series[$i]->image ?>" alt="Image">
                 <?= $series[$i]->name ?>
                 <p><?= $series[$i]->rating ?></p>

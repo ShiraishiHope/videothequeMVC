@@ -17,10 +17,10 @@ class MainController extends Controller
 
         //On va chercher les studios de production
         $productionModel = new ProductionModel;
-        $studios = $productionModel->findRandomUnique();
+        $productions = $productionModel->findRandomUnique();
 
         //On génère la vue
-        $this->render('main/index', compact('series', 'movies', 'studios'));
+        $this->render('main/index', compact('series', 'movies', 'productions'));
 
     }
 }

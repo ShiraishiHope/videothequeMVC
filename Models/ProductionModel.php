@@ -16,16 +16,19 @@ class ProductionModel extends Model
     }
 
     /**
-     * Récupère uniquement les studios de productions sans doublons
+     * Récupère uniquement les studios de productions sans doublons et avec une image
      * @return array
      */
     public function findUnique() {
-        $query = $this->queryFunc("SELECT name, establishmentDate, image FROM ".$this->table." WHERE image IS NOT NULL GROUP BY name, establishmentDate, image");
+        $query = $this->queryFunc("SELECT id, name, establishmentDate, image FROM ".$this->table." WHERE image IS NOT NULL GROUP BY id, name, establishmentDate, image");
         return $query->fetchAll();
     }
-
+    /**
+     * Récupère aléatoirement les studios de productions sans doublons et avec une image
+     * @return array
+     */
     public function findRandomUnique() {
-        $query = $this->queryFunc("SELECT name, establishmentDate, image FROM ".$this->table." WHERE image IS NOT NULL GROUP BY name, establishmentDate, image ORDER BY RAND() LIMIT 3");
+        $query = $this->queryFunc("SELECT id, name, establishmentDate, image FROM ".$this->table." WHERE image IS NOT NULL GROUP BY id, name, establishmentDate, image ORDER BY RAND() LIMIT 3");
         return $query->fetchAll();
     }
     /**

@@ -1,6 +1,7 @@
 <?php
-
-namespace App\Controllers;
+/*
+namespace App\trash;
+use App\Controllers\Controller;
 use App\Models\AnimeModel;
 use App\Models\ProductionModel;
 
@@ -77,4 +78,4 @@ class AnimeController extends Controller
 
     }
 
-}
+}*/
