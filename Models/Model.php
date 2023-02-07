@@ -34,6 +34,24 @@ class Model extends Db
         return $this->queryFunc('SELECT * FROM '.$this->table.' WHERE '. $list_keys, $values)->fetchAll();
     }
 
+    public function findByRandom(array $items){
+        $keys =[];
+        $values =[];
+
+
+        foreach($items as $key => $value){
+
+            $keys[] = "$key = ?";
+            $values[] = $value;
+        }
+
+
+        $list_keys = implode(' AND ', $keys);
+
+
+        return $this->queryFunc('SELECT DISTINCT * FROM (SELECT * FROM '.$this->table.' WHERE '. $list_keys.' ORDER BY RAND() LIMIT 3) as t', $values)->fetchAll();
+    }
+
     public function find(int $id){
         return $this->queryFunc("SELECT * FROM {$this->table} WHERE id = $id")->fetch();
     }
