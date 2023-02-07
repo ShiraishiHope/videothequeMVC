@@ -4,11 +4,21 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="./stylesheet.css">
     <title>Videotheque</title>
 </head>
 <body>
+
 <header>
-    <h1>Videotheque - Anime-based</h1>
+
+    <nav>
+        <ul>
+            <li><a href="/home">Home</a></li>
+            <li><a href="/series/list">Series</a></li>
+            <li><a href="/movies/list">Movies</a></li>
+            <li><a href="/studios/list">Studios</a></li>
+        </ul>
+    </nav>
 </header>
 <main>
     <?= $content ?>

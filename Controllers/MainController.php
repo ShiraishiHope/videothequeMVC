@@ -10,10 +10,10 @@ class MainController extends Controller
         $animeModel = new AnimeModel;
 
         //On va chercher tout les series animes
-        $series = $animeModel->findBy(['type' => 'Series']);
+        $series = $animeModel->findByRandom(['type' => 'Series']);
 
         //On va chercher tout les series animes
-        $movies = $animeModel->findBy(['type' => 'Movie']);
+        $movies = $animeModel->findByRandom(['type' => 'Movie']);
 
         //On va chercher les studios de production
         $productionModel = new ProductionModel;
